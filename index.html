@@ -1,0 +1,39 @@
+<html>
+    <head>
+    </head>
+
+    <body>
+        <h1>JS Prmoises</h1>
+
+        <script>
+            function mydisplay(s){
+                document.write(s)
+            }
+
+            function add(a,b){
+                var sum= a+b
+                mydisplay(sum)
+            }
+
+            let mypromise= new Promise (function(myResolve,myReject){
+                let x= 0;
+                if (x==0){
+                    myResolve("ok")
+
+                }
+                else{
+                    myReject("error")
+                }
+            })
+            mypromise.then(
+                function(value){
+                    add(5,5);
+                },
+                function(error){
+                    add(error)
+                }
+            )
+            
+        </script>
+    </body>
+</html>
